@@ -36,9 +36,17 @@ return [
     */
 
     'guards' => [
-        'web' => [
+        'user' => [
             'driver' => 'session',
             'provider' => 'users',
+        ],
+        'healthcare' => [
+            'driver' => 'session',
+            'provider' => 'healthcares',
+        ],
+        'employee' => [
+            'driver' => 'session',
+            'provider' => 'employees',
         ],
     ],
 
@@ -64,7 +72,14 @@ return [
             'driver' => 'eloquent',
             'model' => env('AUTH_MODEL', App\Models\User::class),
         ],
-
+        'healthcares' => [
+            'driver' => 'eloquent',
+            'model' => env('AUTH_MODEL', App\Models\Healthcare::class),
+        ],
+        'employees' => [
+            'driver' => 'eloquent',
+            'model' => env('AUTH_MODEL', App\Models\Employee::class),
+        ],
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
